@@ -1,12 +1,12 @@
-package net.tylers1066.movecraftcannons.movecraftcannons.listener;
+package net.tylers1066.movecraftcannons.listener;
 
 import at.pavlov.cannons.event.ProjectileImpactEvent;
 import net.countercraft.movecraft.combat.movecraftcombat.tracking.DamageManager;
 import net.countercraft.movecraft.craft.Craft;
 import net.countercraft.movecraft.craft.CraftManager;
 import net.countercraft.movecraft.utils.MathUtils;
-import net.tylers1066.movecraftcannons.movecraftcannons.MovecraftCannons;
-import net.tylers1066.movecraftcannons.movecraftcannons.damagetype.ProjectileImpactDamage;
+import net.tylers1066.movecraftcannons.MovecraftCannons;
+import net.tylers1066.movecraftcannons.damagetype.ProjectileImpactDamage;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;

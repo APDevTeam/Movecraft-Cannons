@@ -1,4 +1,4 @@
-package net.tylers1066.movecraftcannons.movecraftcannons.damagetype;
+package net.tylers1066.movecraftcannons.damagetype;
 
 import net.countercraft.movecraft.combat.movecraftcombat.tracking.damagetype.DamageType;
 
