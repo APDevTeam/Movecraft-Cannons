@@ -1,0 +1,5 @@
+Debug: false # Used only for internal testing, recommend leaving this OFF
+Locale: "en" # Language file to load, currently the plugin comes with en, but you can add your own custom language as well.
+
+# Damage Tracking
+EnableCannonsTracking: true # Enable tracking and recording of Cannons projectiles
