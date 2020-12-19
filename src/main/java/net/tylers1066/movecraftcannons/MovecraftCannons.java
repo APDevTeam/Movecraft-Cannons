@@ -4,6 +4,7 @@ import at.pavlov.cannons.Cannons;
 import net.countercraft.movecraft.combat.movecraftcombat.MovecraftCombat;
 import net.tylers1066.movecraftcannons.config.Config;
 import net.tylers1066.movecraftcannons.listener.ProjectileImpactListener;
+import net.tylers1066.movecraftcannons.listener.TranslationListener;
 import net.tylers1066.movecraftcannons.localisation.I18nSupport;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -60,6 +61,8 @@ public final class MovecraftCannons extends JavaPlugin {
                 getLogger().info(I18nSupport.getInternationalisedString("Movecraft-Combat not found"));
             }
         }
+
+        getServer().getPluginManager().registerEvents(new TranslationListener(), this);
     }
 
     @Override
