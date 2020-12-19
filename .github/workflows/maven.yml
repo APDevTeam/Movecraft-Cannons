@@ -7,14 +7,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout MC-Cannons
+    - name: Checkout Movecraft-Cannons
       uses: actions/checkout@v2
+      with:
+        path: Movecraft-Cannons
     - name: Checkout Movecraft
       uses: actions/checkout@v2
       with:
         repository: 'APDevTeam/Movecraft'
         path: Movecraft
-    - name: Checkout MCC
+    - name: Checkout Movecraft-Combat
       uses: actions/checkout@v2
       with:
         repository: 'TylerS1066/MC-Combat'
@@ -49,6 +51,8 @@ jobs:
       if: steps.cache.outputs.cache-hit != 'true'
       run: cd BuildTools && java -jar BuildTools.jar --rev 1.12.1
     
+    - run: ls
+    
     # Build Movecraft
     - name: Build Movecraft
       run:  mvn -B package --file Movecraft/pom.xml
@@ -64,7 +68,7 @@ jobs:
     - name: Stage jar
       run: mkdir staging && cp Movecraft-Cannons/target/Movecraft-Cannons*.jar staging
     - name: Rename jar
-      run: mv staging/ovecraft-Cannons*.jar staging/Movecraft-Cannons_$GITHUB_SHA.jar
+      run: mv staging/Movecraft-Cannons*.jar staging/Movecraft-Cannons_$GITHUB_SHA.jar
     - name: Upload jar
       uses: actions/upload-artifact@v2
       with:
