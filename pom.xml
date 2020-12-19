@@ -11,13 +11,17 @@
 
     <name>Movecraft-Cannons</name>
 
-    <description>Integration between Movecraft-Combat and Cannons</description>
+    <description>Integration between Movecraft and Cannons</description>
     <properties>
         <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
     <repositories>
+        <repository>
+            <id>spigotmc-repo</id>
+            <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
+        </repository>
         <repository>
             <id>cannons-repo</id>
             <url>https://github.com/DerPavlov/mvn-repo/raw/master/</url>
@@ -26,10 +30,40 @@
 
     <dependencies>
         <dependency>
+            <groupId>org.spigotmc</groupId>
+            <artifactId>spigot-api</artifactId>
+            <version>1.13.2-R0.1-SNAPSHOT</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
             <groupId>at.pavlov</groupId>
             <artifactId>Cannons</artifactId>
             <version>LATEST</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>dummypermscompat</artifactId>
+                    <groupId>com.sk89q</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>worldedit-bukkit</artifactId>
+                    <groupId>com.sk89q.worldedit</groupId>
+                </exclusion>
+            </exclusions>
             <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>net.countercraft.movecraft</groupId>
+            <artifactId>Movecraft</artifactId>
+            <version>7.0.0</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/../Movecraft/target/Movecraft.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>net.countercraft.movecraft.combat</groupId>
+            <artifactId>Movecraft-Combat</artifactId>
+            <version>LATEST</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/../MC-Combat/target/Movecraft-Combat.jar</systemPath>
         </dependency>
     </dependencies>
 
@@ -68,24 +102,4 @@
             </resource>
         </resources>
     </build>
-
-    <repositories>
-        <repository>
-            <id>spigotmc-repo</id>
-            <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
-        </repository>
-        <repository>
-            <id>sonatype</id>
-            <url>https://oss.sonatype.org/content/groups/public/</url>
-        </repository>
-    </repositories>
-
-    <dependencies>
-        <dependency>
-            <groupId>org.spigotmc</groupId>
-            <artifactId>spigot-api</artifactId>
-            <version>1.16.4-R0.1-SNAPSHOT</version>
-            <scope>provided</scope>
-        </dependency>
-    </dependencies>
 </project>
