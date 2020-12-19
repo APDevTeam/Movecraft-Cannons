@@ -1,15 +1,26 @@
 package net.tylers1066.movecraftcannons;
 
 import at.pavlov.cannons.Cannons;
+import at.pavlov.cannons.cannon.Cannon;
+import net.countercraft.movecraft.MovecraftLocation;
 import net.countercraft.movecraft.combat.movecraftcombat.MovecraftCombat;
+import net.countercraft.movecraft.utils.BitmapHitBox;
 import net.tylers1066.movecraftcannons.config.Config;
 import net.tylers1066.movecraftcannons.listener.ProjectileImpactListener;
 import net.tylers1066.movecraftcannons.listener.TranslationListener;
 import net.tylers1066.movecraftcannons.localisation.I18nSupport;
+import org.bukkit.Location;
+import org.bukkit.World;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.UUID;
 import java.util.logging.Level;
 
 
@@ -70,7 +81,11 @@ public final class MovecraftCannons extends JavaPlugin {
         // Plugin shutdown logic
     }
 
-    public Cannons getCannonsPlugin() {
-        return cannonsPlugin;
+    public HashSet<Cannon> getCannons(@NotNull BitmapHitBox hitbox, @NotNull World world, @Nullable UUID uuid) {
+        List<Location> shipLocations = new ArrayList<>();
+        for(MovecraftLocation loc : hitbox) {
+            shipLocations.add(loc.toBukkit(world));
+        }
+        return cannonsPlugin.getCannonsAPI().getCannons(shipLocations, uuid, true);
     }
 }
