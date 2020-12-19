@@ -9,8 +9,6 @@ jobs:
     steps:
     - name: Checkout MC-Cannons
       uses: actions/checkout@v2
-      with:
-        path: Movecraft-Cannons
     - name: Checkout Movecraft
       uses: actions/checkout@v2
       with:
