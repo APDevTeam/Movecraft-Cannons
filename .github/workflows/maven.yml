@@ -22,7 +22,7 @@ jobs:
         repository: 'TylerS1066/MC-Combat'
         path: MC-Combat
 
-    - run: ls
+    - run: ls *
       
     - name: Set up JDK 1.8
       uses: actions/setup-java@v1
@@ -61,6 +61,8 @@ jobs:
     - name: Build Movecraft-Combat
       run: mvn -B package --file MC-Combat/pom.xml
     
+    - run: ls *
+      
     # Build Movecraft-Cannons
     - name: Build Movecraft-Cannons
       run:  mvn -B package --file Movecraft-Cannons/pom.xml
