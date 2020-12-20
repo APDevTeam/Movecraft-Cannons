@@ -20,6 +20,7 @@ public class RotationListener implements Listener {
 
         Vector v = e.getOriginPoint().toBukkit(e.getCraft().getW()).toVector();
         for(Cannon c : cannons) {
+            MovecraftCannons.getInstance().getLogger().info("Rotated cannon " + c + " by " + v.getX() + "," + v.getY() + "," + v.getZ());
             if(e.getRotation() == Rotation.CLOCKWISE) {
                 c.rotateRight(v);
             }

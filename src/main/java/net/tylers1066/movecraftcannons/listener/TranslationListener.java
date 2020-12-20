@@ -19,6 +19,7 @@ public class TranslationListener implements Listener {
 
         for(Cannon c : cannons) {
             c.move(new Vector(e.getDx(), e.getDy(), e.getDz()));
+            MovecraftCannons.getInstance().getLogger().info("Moved cannon " + c + " by " + e.getDx() + "," + e.getDy() + "," + e.getDz());
         }
     }
 }

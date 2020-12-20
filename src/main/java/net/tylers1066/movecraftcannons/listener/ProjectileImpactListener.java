@@ -6,6 +6,7 @@ import net.countercraft.movecraft.craft.Craft;
 import net.countercraft.movecraft.craft.CraftManager;
 import net.countercraft.movecraft.utils.MathUtils;
 import net.tylers1066.movecraftcannons.MovecraftCannons;
+import net.tylers1066.movecraftcannons.config.Config;
 import net.tylers1066.movecraftcannons.damagetype.ProjectileImpactDamage;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -16,6 +17,11 @@ import java.util.UUID;
 public class ProjectileImpactListener implements Listener {
     @EventHandler
     public void impactListener(ProjectileImpactEvent e) {
+        if(!Config.EnableCannonsTracking)
+            return;
+
+        MovecraftCannons.getInstance().getLogger().info("Cannon projectile impacted at " + e.getImpactLocation() + " from " + e.getShooterUID());
+
         Craft craft = CraftManager.getInstance().fastNearestCraftToLoc(e.getImpactLocation());
         if(craft == null)
             return;
