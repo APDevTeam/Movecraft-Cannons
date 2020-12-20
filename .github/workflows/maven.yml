@@ -63,6 +63,7 @@ jobs:
       run: mvn -B package --file MC-Combat/pom.xml
     
     - run: ls *
+    - run: ls MC-Combat/*
       
     # Build Movecraft-Cannons
     - name: Build Movecraft-Cannons
