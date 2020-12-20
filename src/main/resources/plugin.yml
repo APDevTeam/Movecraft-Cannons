@@ -1,6 +1,6 @@
 name: Movecraft-Cannons
 version: ${project.version}
-main: net.tylers1066.movecraftcannons.movecraftcannons.MovecraftCannons
+main: net.tylers1066.movecraftcannons.MovecraftCannons
 api-version: 1.13
 depend: [Movecraft, Cannons]
 softdepend: [Movecraft-Combat]
