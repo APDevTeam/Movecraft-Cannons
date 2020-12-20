@@ -6,7 +6,7 @@
 
     <groupId>net.TylerS1066.Movecraft-Cannons</groupId>
     <artifactId>Movecraft-Cannons</artifactId>
-    <version>0.1.0</version>
+    <version>0.1.1</version>
     <packaging>jar</packaging>
 
     <name>Movecraft-Cannons</name>
@@ -64,6 +64,11 @@
             <version>LATEST</version>
             <scope>system</scope>
             <systemPath>${project.basedir}/../MC-Combat/target/Movecraft-Combat.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>org.jetbrains</groupId>
+            <artifactId>annotations-java5</artifactId>
+            <version>RELEASE</version>
         </dependency>
     </dependencies>
 
