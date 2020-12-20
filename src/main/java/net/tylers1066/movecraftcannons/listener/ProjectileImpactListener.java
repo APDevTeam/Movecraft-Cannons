@@ -20,7 +20,6 @@ public class ProjectileImpactListener implements Listener {
         if(!Config.EnableCannonsTracking)
             return;
 
-        MovecraftCannons.getInstance().getLogger().info("Cannon projectile impacted at " + e.getImpactLocation() + " from " + e.getShooterUID());
 
         Craft craft = CraftManager.getInstance().fastNearestCraftToLoc(e.getImpactLocation());
         if(craft == null)

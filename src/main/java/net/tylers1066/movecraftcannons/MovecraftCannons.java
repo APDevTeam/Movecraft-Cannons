@@ -7,6 +7,7 @@ import net.countercraft.movecraft.combat.movecraftcombat.MovecraftCombat;
 import net.countercraft.movecraft.utils.BitmapHitBox;
 import net.tylers1066.movecraftcannons.config.Config;
 import net.tylers1066.movecraftcannons.listener.ProjectileImpactListener;
+import net.tylers1066.movecraftcannons.listener.RotationListener;
 import net.tylers1066.movecraftcannons.listener.TranslationListener;
 import net.tylers1066.movecraftcannons.localisation.I18nSupport;
 import org.bukkit.Location;
@@ -74,6 +75,7 @@ public final class MovecraftCannons extends JavaPlugin {
         }
 
         getServer().getPluginManager().registerEvents(new TranslationListener(), this);
+        getServer().getPluginManager().registerEvents(new RotationListener(), this);
     }
 
     @Override
