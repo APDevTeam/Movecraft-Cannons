@@ -1,7 +1,7 @@
 package net.tylers1066.movecraftcannons.localisation;
 
-import net.countercraft.movecraft.combat.movecraftcombat.config.Config;
 import net.tylers1066.movecraftcannons.MovecraftCannons;
+import net.tylers1066.movecraftcannons.config.Config;
 
 import java.io.*;
 import java.util.Properties;
