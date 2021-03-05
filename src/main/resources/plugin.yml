@@ -5,4 +5,4 @@ api-version: 1.13
 depend: [Movecraft, Cannons]
 softdepend: [Movecraft-Combat]
 authors: [TylerS1066]
-description: Integration between Movecraft-Combat and Cannons
+description: Integration between Movecraft and Cannons
