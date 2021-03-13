@@ -1,5 +1,6 @@
 # Movecraft-Cannons Integration
- 
+![Cannons](https://github.com/TylerS1066/Movecraft-Cannons/actions/workflows/maven.yml/badge.svg)
+
 Home of the code for the following features:
  - Cannons plugin integration
  - Optional Movecraft-Combat integration (requires v1.2+ and Cannons v2.4.6+)
