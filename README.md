@@ -7,7 +7,7 @@ Home of the code for the following features:
 
 ## Download
 
-This plugin supports Minecraft versions 1.10.2 to 1.16.5, and Movecraft 7.0.0 Beta 8+ (or Eirik's fork Beta 38+).
+This plugin supports Minecraft versions 1.10.2 to 1.16.5, and Movecraft 7.0.0 Beta 8+.
 
 Devevlopment builds can be found on the [GitHub Actions tab](https://github.com/TylerS1066/Movecraft-Cannons/actions) of this repository.
 
