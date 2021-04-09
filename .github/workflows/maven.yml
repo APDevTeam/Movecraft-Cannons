@@ -62,7 +62,7 @@ jobs:
 
     # Build Movecraft-Combat
     - name: Build Movecraft-Combat
-      run: mvn -B package -T 1C --file MC-Combat/pom.xml
+      run: mvn -B package -T 1C --file Movecraft-Combat/pom.xml
       
     # Build Movecraft-Cannons
     - name: Build Movecraft-Cannons
