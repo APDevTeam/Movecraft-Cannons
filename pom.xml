@@ -63,7 +63,7 @@
             <artifactId>Movecraft-Combat</artifactId>
             <version>LATEST</version>
             <scope>system</scope>
-            <systemPath>${project.basedir}/../MC-Combat/target/Movecraft-Combat.jar</systemPath>
+            <systemPath>${project.basedir}/../Movecraft-Combat/target/Movecraft-Combat.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>org.jetbrains</groupId>
