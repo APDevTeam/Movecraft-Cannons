@@ -5,6 +5,11 @@ Home of the code for the following features:
  - Cannons plugin integration
  - Optional Movecraft-Combat integration (requires v1.2+ and Cannons v2.4.6+)
 
+## Version support
+The `legacy` branch is coded for 1.10.2 to 1.16.5 and Movecraft 7.x.
+
+The `main` branch is coded for 1.14.4 to 1.16.5 and Movecraft 8.x.
+
 ## Download
 
 This plugin supports Minecraft versions 1.10.2 to 1.16.5, and Movecraft 7.0.0 Beta 8+.
