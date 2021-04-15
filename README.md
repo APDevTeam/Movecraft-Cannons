@@ -16,7 +16,7 @@ This plugin supports Minecraft versions 1.10.2 to 1.16.5, and Movecraft 7.0.0 Be
 
 Devevlopment builds can be found on the [GitHub Actions tab](https://github.com/TylerS1066/Movecraft-Cannons/actions) of this repository.
 
-Stable builds can be found on [our SpigotMC page](https://www.spigotmc.org/resources/movecraft-combat.81574/).
+Stable builds can be found on [our SpigotMC page](https://www.spigotmc.org/resources/movecraft-cannons.86908/).
 
 ## Building
 This plugin requires that the user setup and build their [Movecraft](https://github.com/APDevTeam/Movecraft) and [Movecraft-Combat](https://github.com/TylerS1066/Movecraft-Combat) development environments, and then clone this into the same folder as your Movecraft development environment such that Movecraft-Cannons, Movecraft-Combat and Movecraft are contained in the same folder.
