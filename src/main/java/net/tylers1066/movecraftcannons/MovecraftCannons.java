@@ -4,7 +4,7 @@ import at.pavlov.cannons.Cannons;
 import at.pavlov.cannons.cannon.Cannon;
 import net.countercraft.movecraft.MovecraftLocation;
 import net.countercraft.movecraft.combat.movecraftcombat.MovecraftCombat;
-import net.countercraft.movecraft.utils.BitmapHitBox;
+import net.countercraft.movecraft.util.hitboxes.HitBox;
 import net.tylers1066.movecraftcannons.config.Config;
 import net.tylers1066.movecraftcannons.listener.ProjectileImpactListener;
 import net.tylers1066.movecraftcannons.listener.RotationListener;
@@ -83,7 +83,7 @@ public final class MovecraftCannons extends JavaPlugin {
         // Plugin shutdown logic
     }
 
-    public HashSet<Cannon> getCannons(@NotNull BitmapHitBox hitbox, @NotNull World world, @Nullable UUID uuid) {
+    public HashSet<Cannon> getCannons(@NotNull HitBox hitbox, @NotNull World world, @Nullable UUID uuid) {
         List<Location> shipLocations = new ArrayList<>();
         for(MovecraftLocation loc : hitbox) {
             shipLocations.add(loc.toBukkit(world));
