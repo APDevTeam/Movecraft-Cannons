@@ -4,7 +4,7 @@ import at.pavlov.cannons.event.ProjectileImpactEvent;
 import net.countercraft.movecraft.combat.movecraftcombat.tracking.DamageManager;
 import net.countercraft.movecraft.craft.Craft;
 import net.countercraft.movecraft.craft.CraftManager;
-import net.countercraft.movecraft.utils.MathUtils;
+import net.countercraft.movecraft.util.MathUtils;
 import net.tylers1066.movecraftcannons.MovecraftCannons;
 import net.tylers1066.movecraftcannons.config.Config;
 import net.tylers1066.movecraftcannons.damagetype.ProjectileImpactDamage;
