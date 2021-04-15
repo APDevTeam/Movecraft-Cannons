@@ -11,9 +11,6 @@ The `legacy` branch is coded for 1.10.2 to 1.16.5 and Movecraft 7.x.
 The `main` branch is coded for 1.14.4 to 1.16.5 and Movecraft 8.x.
 
 ## Download
-
-This plugin supports Minecraft versions 1.10.2 to 1.16.5, and Movecraft 7.0.0 Beta 8+.
-
 Devevlopment builds can be found on the [GitHub Actions tab](https://github.com/TylerS1066/Movecraft-Cannons/actions) of this repository.
 
 Stable builds can be found on [our SpigotMC page](https://www.spigotmc.org/resources/movecraft-cannons.86908/).
