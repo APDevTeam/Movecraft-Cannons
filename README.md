@@ -23,7 +23,7 @@ This plugin requires that the user setup and build their [Movecraft](https://git
 This plugin also requires you to build the latest version of 1.13.2 using build tools.
 
 ```
-java -jar BuildTools.jar --rev 1.13.2
+java -jar BuildTools.jar --rev 1.14.4
 ```
 
 Then, run the following to build Movecraft-Cannons through `maven`.
