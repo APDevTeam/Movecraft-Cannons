@@ -177,7 +177,6 @@ jobs:
       with:
         repository: 'APDevTeam/Movecraft'
         path: Movecraft
-        ref: '1.13+'
     - name: Checkout Movecraft-Combat
       uses: actions/checkout@v2
       with:
