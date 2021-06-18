@@ -1,7 +1,7 @@
 package net.tylers1066.movecraftcannons.listener;
 
 import at.pavlov.cannons.cannon.Cannon;
-import net.countercraft.movecraft.Rotation;
+import net.countercraft.movecraft.MovecraftRotation;
 import net.countercraft.movecraft.events.CraftRotateEvent;
 import net.tylers1066.movecraftcannons.MovecraftCannons;
 import org.bukkit.event.EventHandler;
@@ -20,10 +20,10 @@ public class RotationListener implements Listener {
 
         Vector v = e.getOriginPoint().toBukkit(e.getCraft().getW()).toVector();
         for(Cannon c : cannons) {
-            if(e.getRotation() == Rotation.CLOCKWISE) {
+            if(e.getRotation() == MovecraftRotation.CLOCKWISE) {
                 c.rotateRight(v);
             }
-            else if(e.getRotation() == Rotation.ANTICLOCKWISE) {
+            else if(e.getRotation() == MovecraftRotation.ANTICLOCKWISE) {
                 c.rotateLeft(v);
             }
         }
