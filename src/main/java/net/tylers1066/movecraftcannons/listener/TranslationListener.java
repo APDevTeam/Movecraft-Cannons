@@ -4,14 +4,18 @@ import at.pavlov.cannons.cannon.Cannon;
 import net.countercraft.movecraft.events.CraftPreTranslateEvent;
 import net.tylers1066.movecraftcannons.MovecraftCannons;
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.util.Vector;
 import java.util.HashSet;
 
 
 public class TranslationListener implements Listener {
-    @EventHandler
+    @EventHandler(priority = EventPriority.LOWEST)
     public void translateListener(CraftPreTranslateEvent e) {
+        if(e.isCancelled())
+            return;
+
         if(e.getCraft().getNotificationPlayer() == null)
             return;
 

@@ -5,14 +5,18 @@ import net.countercraft.movecraft.MovecraftRotation;
 import net.countercraft.movecraft.events.CraftRotateEvent;
 import net.tylers1066.movecraftcannons.MovecraftCannons;
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.util.Vector;
 import java.util.HashSet;
 
 
 public class RotationListener implements Listener {
-    @EventHandler
+    @EventHandler(priority = EventPriority.LOWEST)
     public void rotateListener(CraftRotateEvent e) {
+        if(e.isCancelled())
+            return;
+
         if(e.getCraft().getNotificationPlayer() == null)
             return;
 
