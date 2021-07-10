@@ -1,6 +1,6 @@
 name: Java CI
 
-on: [push]
+on: [workflow_dispatch, push, pull_request]
 
 jobs:
   # Build 1.14.4 NMS
