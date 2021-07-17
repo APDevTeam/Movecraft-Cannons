@@ -3,7 +3,7 @@ package net.tylers1066.movecraftcannons;
 import at.pavlov.cannons.Cannons;
 import at.pavlov.cannons.cannon.Cannon;
 import net.countercraft.movecraft.MovecraftLocation;
-import net.countercraft.movecraft.combat.movecraftcombat.MovecraftCombat;
+import net.countercraft.movecraft.combat.MovecraftCombat;
 import net.countercraft.movecraft.util.hitboxes.HitBox;
 import net.tylers1066.movecraftcannons.config.Config;
 import net.tylers1066.movecraftcannons.listener.ProjectileImpactListener;

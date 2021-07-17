@@ -1,7 +1,7 @@
 package net.tylers1066.movecraftcannons.listener;
 
 import at.pavlov.cannons.event.ProjectileImpactEvent;
-import net.countercraft.movecraft.combat.movecraftcombat.tracking.DamageManager;
+import net.countercraft.movecraft.combat.tracking.DamageManager;
 import net.countercraft.movecraft.craft.Craft;
 import net.countercraft.movecraft.craft.CraftManager;
 import net.countercraft.movecraft.craft.PlayerCraft;
