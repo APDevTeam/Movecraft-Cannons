@@ -1,6 +1,6 @@
 package net.tylers1066.movecraftcannons.damagetype;
 
-import net.countercraft.movecraft.combat.movecraftcombat.tracking.damagetype.DamageType;
+import net.countercraft.movecraft.combat.tracking.damagetype.DamageType;
 
 public class ProjectileImpactDamage implements DamageType {
     @Override
