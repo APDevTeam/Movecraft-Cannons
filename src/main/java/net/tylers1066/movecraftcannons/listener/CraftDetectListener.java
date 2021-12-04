@@ -32,7 +32,7 @@ public class CraftDetectListener implements Listener {
             return; // Return if empty set to improve performance
 
         // Sum up counts of each cannon design
-        UUID pilotUUID = ((PlayerCraft) craft).getPlayer().getUniqueId();
+        UUID pilotUUID = ((PlayerCraft) craft).getPilot().getUniqueId();
         var cannons = MovecraftCannons.getInstance().getCannons(e.getCraft().getHitBox(), e.getCraft().getWorld(), pilotUUID);
         Map<String, Integer> cannonCount = new HashMap<>();
         for(var cannon : cannons) {
