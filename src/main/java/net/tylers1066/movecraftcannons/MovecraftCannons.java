@@ -6,10 +6,12 @@ import net.countercraft.movecraft.MovecraftLocation;
 import net.countercraft.movecraft.combat.MovecraftCombat;
 import net.countercraft.movecraft.util.hitboxes.HitBox;
 import net.tylers1066.movecraftcannons.config.Config;
+import net.tylers1066.movecraftcannons.listener.CraftDetectListener;
 import net.tylers1066.movecraftcannons.listener.ProjectileImpactListener;
 import net.tylers1066.movecraftcannons.listener.RotationListener;
 import net.tylers1066.movecraftcannons.listener.TranslationListener;
 import net.tylers1066.movecraftcannons.localisation.I18nSupport;
+import net.tylers1066.movecraftcannons.type.MaxCannonsProperty;
 import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.plugin.Plugin;
@@ -31,6 +33,11 @@ public final class MovecraftCannons extends JavaPlugin {
 
     public static MovecraftCannons getInstance() {
         return instance;
+    }
+
+    @Override
+    public void onLoad() {
+        MaxCannonsProperty.register();
     }
 
     @Override
@@ -57,6 +64,8 @@ public final class MovecraftCannons extends JavaPlugin {
         Plugin cannons = getServer().getPluginManager().getPlugin("Cannons");
         if(!(cannons instanceof Cannons)) {
             getLogger().log(Level.SEVERE, I18nSupport.getInternationalisedString("Cannons plugin not found"));
+            this.setEnabled(false);
+            return;
         }
         cannonsPlugin = (Cannons) cannons;
         getLogger().info(I18nSupport.getInternationalisedString("Cannons plugin found"));
@@ -69,11 +78,11 @@ public final class MovecraftCannons extends JavaPlugin {
                 getLogger().info(I18nSupport.getInternationalisedString("Movecraft-Combat found"));
                 getServer().getPluginManager().registerEvents(new ProjectileImpactListener(), this);
             }
-            else {
+            else
                 getLogger().info(I18nSupport.getInternationalisedString("Movecraft-Combat not found"));
-            }
         }
 
+        getServer().getPluginManager().registerEvents(new CraftDetectListener(), this);
         getServer().getPluginManager().registerEvents(new TranslationListener(), this);
         getServer().getPluginManager().registerEvents(new RotationListener(), this);
     }

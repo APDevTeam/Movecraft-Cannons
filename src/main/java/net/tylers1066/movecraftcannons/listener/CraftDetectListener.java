@@ -1,7 +1,6 @@
 package net.tylers1066.movecraftcannons.listener;
 
 import net.countercraft.movecraft.craft.Craft;
-import net.countercraft.movecraft.craft.PilotedCraft;
 import net.countercraft.movecraft.craft.PlayerCraft;
 import net.countercraft.movecraft.events.CraftDetectEvent;
 import net.tylers1066.movecraftcannons.MovecraftCannons;
@@ -14,7 +13,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
 
-import static net.tylers1066.movecraftcannons.type.MaxCannonsEntry.MAX_CANNONS;
+import static net.tylers1066.movecraftcannons.type.MaxCannonsProperty.MAX_CANNONS;
 
 public class CraftDetectListener implements Listener {
     @EventHandler
@@ -38,7 +37,7 @@ public class CraftDetectListener implements Listener {
         for(var cannon : cannons) {
             String design = cannon.getCannonDesign().getDesignName().toLowerCase();
             if(!cannonCount.containsKey(design))
-                cannonCount.put(design, 0);
+                cannonCount.put(design, 1);
             else
                 cannonCount.put(design, cannonCount.get(design) + 1);
         }
@@ -60,7 +59,7 @@ public class CraftDetectListener implements Listener {
                     continue;
                 case TOO_MUCH:
                     e.setCancelled(true);
-                    e.setFailMessage("Detection Failed! You have too many cannons of the following type on this craft:" + max.getName() + ": " + result.getRight());
+                    e.setFailMessage("Detection Failed! You have too many cannons of the following type on this craft: " + max.getName() + ": " + result.getRight());
                     return;
             }
         }
