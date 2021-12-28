@@ -2,6 +2,8 @@ package net.tylers1066.movecraftcannons.listener;
 
 import at.pavlov.cannons.cannon.Cannon;
 import net.countercraft.movecraft.MovecraftLocation;
+import net.countercraft.movecraft.craft.Craft;
+import net.countercraft.movecraft.craft.PlayerCraft;
 import net.countercraft.movecraft.events.CraftTranslateEvent;
 import net.tylers1066.movecraftcannons.MovecraftCannons;
 import org.bukkit.event.EventHandler;
@@ -10,7 +12,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.util.Vector;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.HashSet;
+import java.util.Set;
 
 
 public class TranslationListener implements Listener {
@@ -19,10 +21,14 @@ public class TranslationListener implements Listener {
         if (e.isCancelled())
             return;
 
-        if (e.getCraft().getNotificationPlayer() == null)
+        Craft craft = e.getCraft();
+        if (!(craft instanceof PlayerCraft))
             return;
 
-        HashSet<Cannon> cannons = MovecraftCannons.getInstance().getCannons(e.getCraft().getHitBox(), e.getCraft().getW(), e.getCraft().getNotificationPlayer().getUniqueId());
+        Set<Cannon> cannons = MovecraftCannons.getInstance().getCannons(
+                craft.getHitBox(), craft.getWorld(),
+                ((PlayerCraft) craft).getPilot().getUniqueId()
+        );
 
         Vector v = delta(e);
         for (Cannon c : cannons) {
