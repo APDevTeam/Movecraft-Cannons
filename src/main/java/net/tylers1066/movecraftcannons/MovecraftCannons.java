@@ -50,8 +50,8 @@ public final class MovecraftCannons extends JavaPlugin {
         // TODO other languages
         String[] languages = {"en"};
         for (String s : languages) {
-            if (!new File(getDataFolder()  + "/localisation/mc-cannonslang_"+ s +".properties").exists()) {
-                this.saveResource("localisation/mc-cannonslang_"+ s +".properties", false);
+            if (!new File(getDataFolder() + "/localisation/mc-cannonslang_" + s + ".properties").exists()) {
+                this.saveResource("localisation/mc-cannonslang_" + s + ".properties", false);
             }
         }
         Config.Locale = getConfig().getString("Locale", "en");
@@ -62,7 +62,7 @@ public final class MovecraftCannons extends JavaPlugin {
 
         // Load cannons plugin
         Plugin cannons = getServer().getPluginManager().getPlugin("Cannons");
-        if(!(cannons instanceof Cannons)) {
+        if (!(cannons instanceof Cannons)) {
             getLogger().log(Level.SEVERE, I18nSupport.getInternationalisedString("Cannons plugin not found"));
             this.setEnabled(false);
             return;
@@ -71,7 +71,7 @@ public final class MovecraftCannons extends JavaPlugin {
         getLogger().info(I18nSupport.getInternationalisedString("Cannons plugin found"));
 
 
-        if(Config.EnableCannonsTracking) {
+        if (Config.EnableCannonsTracking) {
             // Load Movecraft-Combat plugin
             Plugin mcc = getServer().getPluginManager().getPlugin("Movecraft-Combat");
             if (mcc instanceof MovecraftCombat) {
@@ -94,7 +94,7 @@ public final class MovecraftCannons extends JavaPlugin {
 
     public HashSet<Cannon> getCannons(@NotNull HitBox hitbox, @NotNull World world, @Nullable UUID uuid) {
         List<Location> shipLocations = new ArrayList<>();
-        for(MovecraftLocation loc : hitbox) {
+        for (MovecraftLocation loc : hitbox) {
             shipLocations.add(loc.toBukkit(world));
         }
         return cannonsPlugin.getCannonsAPI().getCannons(shipLocations, uuid, true);

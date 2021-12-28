@@ -19,7 +19,7 @@ public class MaxCannonsEntry {
     }
 
     public boolean check(int count, int size) {
-        if(numericMax)
+        if (numericMax)
             return !(count > max);
         else {
             double percent = 100D * count / size;
@@ -27,22 +27,22 @@ public class MaxCannonsEntry {
         }
     }
 
-    public enum DetectionResult {
-        TOO_MUCH,
-        SUCCESS
-    }
-
     public Pair<DetectionResult, String> detect(int count, int size) {
-        if(numericMax) {
-            if(count > max)
+        if (numericMax) {
+            if (count > max)
                 return new Pair<>(DetectionResult.TOO_MUCH, String.format("%d > %d", count, (int) max));
         }
         else {
             double blockPercent = 100D * count / size;
-            if(blockPercent > max)
+            if (blockPercent > max)
                 return new Pair<>(DetectionResult.TOO_MUCH, String.format("%.2f%% > %.2f%%", blockPercent, max));
         }
 
         return new Pair<>(DetectionResult.SUCCESS, "");
+    }
+
+    public enum DetectionResult {
+        TOO_MUCH,
+        SUCCESS
     }
 }

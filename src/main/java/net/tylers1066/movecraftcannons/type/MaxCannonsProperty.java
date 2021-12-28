@@ -36,12 +36,12 @@ public class MaxCannonsProperty {
     public static void register() {
         CraftType.registerProperty(new ObjectPropertyImpl("maxCannons", MAX_CANNONS, (data, type, fileKey, namespacedKey) -> {
             var map = data.getData(fileKey).getBackingData();
-            if(map.isEmpty())
+            if (map.isEmpty())
                 throw new TypeData.InvalidValueException("Value for " + fileKey + " must not be an empty map");
 
             Set<MaxCannonsEntry> maxCannons = new HashSet<>();
-            for(var entry : map.entrySet()) {
-                if(entry.getKey() == null)
+            for (var entry : map.entrySet()) {
+                if (entry.getKey() == null)
                     throw new TypeData.InvalidValueException("Keys for " + fileKey + " must be a string cannon name.");
 
                 String name = entry.getKey();

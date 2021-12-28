@@ -3,7 +3,11 @@ package net.tylers1066.movecraftcannons.localisation;
 import net.tylers1066.movecraftcannons.MovecraftCannons;
 import net.tylers1066.movecraftcannons.config.Config;
 
-import java.io.*;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.Properties;
 import java.util.logging.Level;
 
@@ -21,7 +25,7 @@ public class I18nSupport {
         InputStream stream = null;
 
         try {
-            stream = new FileInputStream(langDirectory.getAbsolutePath()+"/mc-cannonslang_" + Config.Locale + ".properties");
+            stream = new FileInputStream(langDirectory.getAbsolutePath() + "/mc-cannonslang_" + Config.Locale + ".properties");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -42,7 +46,8 @@ public class I18nSupport {
         String ret = langFile.getProperty(key);
         if (ret != null) {
             return ret;
-        } else {
+        }
+        else {
             return key;
         }
     }

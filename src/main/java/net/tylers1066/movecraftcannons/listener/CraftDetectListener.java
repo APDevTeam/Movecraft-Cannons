@@ -19,24 +19,24 @@ public class CraftDetectListener implements Listener {
     @EventHandler
     public void onCraftDetect(CraftDetectEvent e) {
         Craft craft = e.getCraft();
-        if(!(craft instanceof PlayerCraft))
+        if (!(craft instanceof PlayerCraft))
             return;
 
         var objectProperty = craft.getType().getObjectProperty(MAX_CANNONS);
-        if(!(objectProperty instanceof Set<?>))
+        if (!(objectProperty instanceof Set<?>))
             throw new IllegalStateException("MAX_CANNONS must be a set.");
 
         Set<?> maxCannons = (Set<?>) objectProperty;
-        if(maxCannons.size() == 0)
+        if (maxCannons.size() == 0)
             return; // Return if empty set to improve performance
 
         // Sum up counts of each cannon design
         UUID pilotUUID = ((PlayerCraft) craft).getPilot().getUniqueId();
         var cannons = MovecraftCannons.getInstance().getCannons(e.getCraft().getHitBox(), e.getCraft().getWorld(), pilotUUID);
         Map<String, Integer> cannonCount = new HashMap<>();
-        for(var cannon : cannons) {
+        for (var cannon : cannons) {
             String design = cannon.getCannonDesign().getDesignName().toLowerCase();
-            if(!cannonCount.containsKey(design))
+            if (!cannonCount.containsKey(design))
                 cannonCount.put(design, 1);
             else
                 cannonCount.put(design, cannonCount.get(design) + 1);
@@ -44,13 +44,13 @@ public class CraftDetectListener implements Listener {
 
         // Check designs against maxCannons
         int size = e.getCraft().getOrigBlockCount();
-        for(var entry : maxCannons) {
-            if(!(entry instanceof MaxCannonsEntry))
+        for (var entry : maxCannons) {
+            if (!(entry instanceof MaxCannonsEntry))
                 throw new IllegalStateException("MAX_CANNONS must be a set of MaxCannonsEntry.");
 
             MaxCannonsEntry max = (MaxCannonsEntry) entry;
             var count = cannonCount.get(max.getName().toLowerCase());
-            if(count == null)
+            if (count == null)
                 continue;
 
             var result = max.detect(count, size);
