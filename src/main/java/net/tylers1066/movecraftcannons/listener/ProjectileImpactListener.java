@@ -23,7 +23,7 @@ public class ProjectileImpactListener implements Listener {
         if (!Config.EnableCannonsTracking)
             return;
 
-        Craft craft = CraftManager.getInstance().fastNearestCraftToLoc(e.getImpactLocation());
+        Craft craft = MathUtils.fastNearestCraftToLoc(CraftManager.getInstance().getCrafts(), e.getImpactLocation());
         if (!(craft instanceof PlayerCraft))
             return;
         if (!MathUtils.locIsNearCraftFast(craft, MathUtils.bukkit2MovecraftLoc(e.getImpactLocation())))
