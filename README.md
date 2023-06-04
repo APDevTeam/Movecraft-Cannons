@@ -1,5 +1,6 @@
 # Movecraft-Cannons Integration
 ![Cannons](https://github.com/TylerS1066/Movecraft-Cannons/actions/workflows/maven.yml/badge.svg)
+[![Codebeat](https://codebeat.co/badges/cb4d4154-2163-4685-819f-2635f8784923)](https://codebeat.co/projects/github-com-apdevteam-movecraft-cannons-main)
 
 Home of the code for the following features:
  - Cannons plugin integration
