@@ -3,7 +3,7 @@ package net.tylers1066.movecraftcannons.listener;
 import at.pavlov.cannons.cannon.Cannon;
 import net.countercraft.movecraft.MovecraftLocation;
 import net.countercraft.movecraft.craft.Craft;
-import net.countercraft.movecraft.craft.PlayerCraft;
+import net.countercraft.movecraft.craft.PilotedCraft;
 import net.countercraft.movecraft.events.CraftTranslateEvent;
 import net.tylers1066.movecraftcannons.MovecraftCannons;
 import org.bukkit.event.EventHandler;
@@ -23,12 +23,12 @@ public class TranslationListener implements Listener {
             return;
 
         Craft craft = e.getCraft();
-        if (!(craft instanceof PlayerCraft))
+        if (!(craft instanceof PilotedCraft))
             return;
 
         Set<Cannon> cannons = MovecraftCannons.getInstance().getCannons(
                 craft.getHitBox(), craft.getWorld(),
-                ((PlayerCraft) craft).getPilot().getUniqueId()
+                ((PilotedCraft) craft).getPilot().getUniqueId()
         );
 
         Vector v = delta(e);
