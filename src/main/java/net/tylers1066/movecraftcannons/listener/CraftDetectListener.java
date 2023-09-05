@@ -8,10 +8,11 @@ import net.tylers1066.movecraftcannons.type.MaxCannonsEntry;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 
+import at.pavlov.cannons.cannon.Cannon;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
-import java.util.UUID;
 
 import static net.tylers1066.movecraftcannons.type.MaxCannonsProperty.MAX_CANNONS;
 
@@ -31,8 +32,7 @@ public class CraftDetectListener implements Listener {
             return; // Return if empty set to improve performance
 
         // Sum up counts of each cannon design
-        UUID pilotUUID = ((PlayerCraft) craft).getPilot().getUniqueId();
-        var cannons = MovecraftCannons.getInstance().getCannons(e.getCraft().getHitBox(), e.getCraft().getWorld(), pilotUUID);
+        Set<Cannon> cannons = MovecraftCannons.getInstance().getCannons(e.getCraft());
         Map<String, Integer> cannonCount = new HashMap<>();
         for (var cannon : cannons) {
             String design = cannon.getCannonDesign().getDesignName().toLowerCase();
@@ -59,7 +59,8 @@ public class CraftDetectListener implements Listener {
                     continue;
                 case TOO_MUCH:
                     e.setCancelled(true);
-                    e.setFailMessage("Detection Failed! You have too many cannons of the following type on this craft: " + max.getName() + ": " + result.getRight());
+                    e.setFailMessage("Detection Failed! You have too many cannons of the following type on this craft: "
+                            + max.getName() + ": " + result.getRight());
                     return;
             }
         }
